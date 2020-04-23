@@ -2,31 +2,32 @@ import * as mongoose from 'mongoose';
 
 export const UserSchema = new mongoose.Schema(
     {
-        firstName: String,
-    lastName: String,
-    email: String,
-    phone: Number,
-    isAdmin: Boolean,
-    verified: Boolean
-    
-        blogpost: Number,
-        title: {
+        firstName: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        lastName: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        email: {
             type: String,
             trim: true,
             unique: true,
             index: true,
             required: true,
         },
-        author: {
-            type: String,
-            trim: true,
+        phone: Number,
+        isAdmin: {
+            type: Boolean,
+            default: false,
         },
-        published: [
-            {
-                publisher: String,
-                year: { type: Number, default: 2020 },
-            },
-        ],
+        verified: {
+            type: Boolean,
+            default: false,
+        },
     },
     {
         versionKey: false,

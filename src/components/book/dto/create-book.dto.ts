@@ -5,7 +5,6 @@ class PublisherDto {
     @IsString()
     publisher: string;
 
-    @IsNotEmpty()
     @IsInt()
     year: number;
 }
