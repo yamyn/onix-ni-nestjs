@@ -1,6 +1,6 @@
 import { IsInt, IsString, IsArray, IsNotEmpty } from 'class-validator';
 
-class PublisherDto {
+export class PublisherDto {
     @IsNotEmpty()
     @IsString()
     publisher: string;
