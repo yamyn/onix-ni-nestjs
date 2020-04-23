@@ -18,9 +18,7 @@ import { APP_PIPE } from '@nestjs/core';
         }),
         TypeOrmModule.forRoot({
             type: 'mongodb',
-            url:
-                process.env.MONGODB_URL ||
-                'mongodb+srv://root:1234@cluster0-ilpdw.mongodb.net/test?retryWrites=true&w=majority',
+            url: process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/',
             useUnifiedTopology: true,
             useNewUrlParser: true,
             database: process.env.MONGO_DATABASE || 'books_db',
